@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ikan Duyung Pemburu Ilmu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+
+  <!-- ===== LAYAR JUDUL ===== -->
+  <div id="screen-title" class="screen active">
+    <div class="title-content">
+      <div class="title-deco">✦ ✦ ✦</div>
+      <h1 class="game-title">Ikan Duyung<br/><span>Pemburu Ilmu</span></h1>
+      <p class="subtitle">Tangkap jawaban yang benar, hindari yang salah!</p>
+      <div class="controls-info">
+        <span>⬆ W / ↑</span> Naik &nbsp;|&nbsp; <span>⬇ S / ↓</span> Turun
+      </div>
+      <button id="btn-start" class="btn-primary">🌊 Mulai Petualangan</button>
+    </div>
+    <div class="bubbles-bg" id="bubbles-title"></div>
+  </div>
+
+  <!-- ===== LAYAR GAME ===== -->
+  <div id="screen-game" class="screen">
+    <!-- HUD (Heads-Up Display) -->
+    <div id="hud">
+      <div class="hud-block">
+        <div class="hud-label">SKOR</div>
+        <div id="hud-score" class="hud-value">0</div>
+      </div>
+      <div class="hud-block hud-lives">
+        <div class="hud-label">NYAWA</div>
+        <div id="hud-lives" class="hud-value">❤️ ❤️ ❤️</div>
+      </div>
+      <div class="hud-block">
+        <div class="hud-label">SOAL</div>
+        <div id="hud-round" class="hud-value">1/10</div>
+      </div>
+    </div>
+
+    <!-- Papan soal -->
+    <div id="question-board">
+      <div class="question-label">❓ Pertanyaan</div>
+      <div id="question-text">Soal akan muncul di sini...</div>
+    </div>
+
+    <!-- Kanvas game -->
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Efek feedback (benar/salah) -->
+    <div id="feedback" class="feedback hidden"></div>
+  </div>
+
+  <!-- ===== LAYAR GAME OVER ===== -->
+  <div id="screen-gameover" class="screen">
+    <div class="gameover-content">
+      <div class="gameover-icon">🐟</div>
+      <h2 id="gameover-title">Game Over!</h2>
+      <p id="gameover-category" class="category-badge"></p>
+      <div class="score-display">
+        <span class="score-label">Skor Akhir</span>
+        <span id="final-score" class="score-number">0</span>
+      </div>
+      <div id="gameover-stats" class="stats-grid"></div>
+      <button id="btn-restart" class="btn-primary">🔄 Main Lagi</button>
+      <button id="btn-menu" class="btn-secondary">🏠 Menu Utama</button>
+    </div>
+    <div class="bubbles-bg" id="bubbles-gameover"></div>
+  </div>
+
+  <script src="logic.js"></script>
+</body>
+</html>
